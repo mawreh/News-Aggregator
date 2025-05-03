@@ -1,0 +1,443 @@
+/* OVERALL LAYOUT */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem 2.1rem;
+  max-width: 1200px;
+  margin: 50px auto 3rem auto;
+  box-sizing: border-box;
+  margin-bottom: 500px;
+}
+
+/* Side navigation panel */
+.side-nav {
+  flex-shrink: 0;
+  position: relative;
+  width: 200px;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* MAIN CONTENT WRAPPER */
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  max-width: 900px;
+}
+
+
+/* HEADER */
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 42px;
+}
+
+/* STATS CONTAINER */
+.dashboard-stats-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+/* ROW STYLES: use a 4-column grid, each track = 1fr */
+.row-one,
+.row-two {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Top row: 
+   • Card 1 → col 1
+   • Card 2 → cols 2–3 (double width)
+   • Card 3 → col 4
+*/
+.row-one > .card:nth-child(1) { grid-column: 1; }
+.row-one > .card:nth-child(2) { grid-column: 2 / span 2; }
+.row-one > .card:nth-child(3) { grid-column: 4; }
+
+/* Bottom row:
+   • Card 1 → cols 1–2 (same width as top-middle)
+   • Card 2 → col 3
+   • Card 3 → col 4
+*/
+.row-two > .card:nth-child(1) { grid-column: 1 / span 2; }
+.row-two > .card:nth-child(2) { grid-column: 3; }
+.row-two > .card:nth-child(3) { grid-column: 4; }
+
+/* CARD STYLES */
+.card {
+  border: none;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.card p {
+  font-size: 0.75rem;
+  margin-bottom: 0.7rem;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card .content {
+  padding: 1rem;
+}
+
+.card,
+.card * {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* OVERVIEW CARD */
+.overview-card ul,
+.recent-activity-card ul,
+.friends-card ul,
+.top-publications-card ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.overview-card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.overview-card .divider {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  margin: 0.5rem 0;
+}
+
+/* ENGAGEMENT CARD */
+.engagement-card .stats-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 0.2rem;
+}
+
+.engagement-card .data-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 0.2rem;
+}
+
+.engagement-card .stat-label {
+  font-size: 0.625rem;
+}
+
+.engagement-card .stat-number {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.engagement-card .this-year .stat-label,
+.engagement-card .this-year .stat-number {
+  color: #666;
+}
+
+.engagement-card .this-month .stat-label,
+.engagement-card .this-month .stat-number {
+  color: #008078;
+}
+
+/* TOP TOPICS CARD */
+.top-topics-card {
+  padding: 1rem;
+}
+
+.top-topics-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.top-topics-card p {
+  font-size: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.top-topics-card ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 1rem;
+}
+
+.top-topics-card li {
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+/* For the first (top) topic */
+.top-topics-card li.top-topic .order {
+  font-size: 1.5rem;
+  color: #008078;
+  font-weight: 700;
+  text-align: left;
+}
+
+.top-topics-card li.top-topic .tag-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.7rem;
+  height: 3rem;
+  min-width: 100px;
+  border: 2px solid #008078;
+  border-radius: 0.65rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #008078;
+  text-align: center;
+  margin-left: 0.5rem;
+  padding: 1rem;
+}
+
+.top-topics-card li.top-topic .percentage {
+  font-size: 1.5rem;
+  color: #008078;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Divider under the #1 topic */
+.top-topic-divider {
+  border: none;
+  border-top: 1px solid #d9d9d9;
+  margin: 0.5rem 0 1rem;
+}
+
+li.non-top-topic {
+  color: #666;
+  font-size: 0.875rem;
+  line-height: 2rem;
+}
+
+.topic-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-button {
+  background-color: #fff;
+  color: #008078;
+  border: 3px solid #008078;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+}
+
+
+/* =======================
+   Top Publications Card Specifics
+   ======================= */
+   .top-publications-card ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Ensure even spacing */
+    height: auto;
+    /* Allow the height to adjust dynamically */
+    max-height: 100%;
+    /* Prevent it from exceeding the card's height */
+    overflow-y: auto;
+    /* Add vertical scrolling if content overflows */
+  }
+  
+  .top-publications-card li {
+    font-size: 110%;
+    font-weight: 700;
+    color: #1A1A1A;
+    font-family: "Charis SIL", serif;
+    text-align: center;
+    position: relative;
+    padding: 1.5rem 0;
+    /* Reduce padding to save space */
+    flex-grow: 0;
+    /* Prevent items from growing too large */
+    flex-shrink: 1;
+    /* Allow items to shrink if needed */
+    display: flex;
+    align-items: center;
+    /* Center content vertically */
+    justify-content: center;
+    /* Center content horizontally */
+  }
+  
+  .top-publications-card li:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    border-top: 1px solid #d9d9d9;
+  }
+
+/* RECENT ACTIVITY CARD */
+.recent-activity-card li {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  line-height: 2.5rem;
+}
+
+.recent-activity-card li svg {
+  min-width: 22px;
+  min-height: 22px;
+  flex-shrink: 0;
+}
+
+.recent-activity-card .list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.recent-activity-card span.liked {
+  color: #008078;
+}
+.recent-activity-card span.disliked {
+  color: #EF3E56;
+}
+.recent-activity-card span.commented,
+.recent-activity-card span.shared,
+.recent-activity-card span.saved {
+  color: #008078;
+}
+
+/* FRIENDS CARD */
+.friends-card .friend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.friends-card .friend-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.friends-card .friend-avatar:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  transition: transform 0.2s ease-out;
+}
+
+.friends-card .friend-name {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #1A1A1A;
+  margin-right: auto;
+}
+
+.friends-card .friend-actions {
+  margin: 0;
+}
+
+.friend-icon {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+  fill: #666;
+}
+
+/* Ensure the SVG icons (injected as React components) have a minimum size */
+.recent-activity-card li svg {
+  max-width: 22px;
+  max-height: 22px;
+  flex-shrink: 0;
+}
+
+/* Optionally, adjust spacing so the list evenly fills the available vertical space */
+.recent-activity-card .list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+/* Special styling inside activity text if you wrap key words in spans */
+.recent-activity-card span.liked {
+  color: #008078;
+}
+
+.recent-activity-card span.disliked {
+  color: #EF3E56;
+}
+
+.recent-activity-card span.commented,
+.recent-activity-card span.shared,
+.recent-activity-card span.saved {
+  color: #008078;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .row-one,
+  .row-two {
+    display: flex;
+    flex-direction: column;
+  }
+  .row-one > .card,
+  .row-two > .card {
+    width: 100%;
+    /* clear out any grid positioning */
+    grid-column: auto;
+  }
+}

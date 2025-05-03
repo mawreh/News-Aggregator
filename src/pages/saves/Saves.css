@@ -1,0 +1,175 @@
+/* Overall container keeps sidebar and main content in a row */
+
+.saves-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem 2.1rem;
+  max-width: 1200px;
+  margin: 50px auto 3rem auto;
+  box-sizing: border-box;
+  margin-bottom: 500px;
+}
+
+/* New wrapper for main content (header and articles) */
+.saves-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  max-width: 900px;
+}
+
+/* Header styles remain similar */
+.saves-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 42px;
+}
+
+/* When no saved articles exist, center the message */
+.no-saves-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.saves-item-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  justify-items: stretch;
+}
+
+.saves-item-container > .card-AC {
+  flex: none;                /* disable any flex-based resizing */
+  width: 100%;               /* fill the grid cell */
+  max-width: none;           /* clear previous max-width rules */
+  height: auto;              /* let content define height */
+}
+
+.side-nav {
+  flex-shrink: 0;
+  position: relative;
+  width: 200px;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.no-saves {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.no-saves-image {
+  width: 40%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+
+/* Divider styles */
+.divider {
+  color: #d9d9d9;
+  width: 100%;
+  border-style: solid;
+  margin-top: 10px;
+  /* make the divider thinner */
+  border-width: 0.5px;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Stack on small screens */
+@media (max-width: 600px) {
+  .saves-item-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card-AC {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 150px;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .img-AC {
+    width: 160px;
+    height: 90px;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    flex-shrink: 0;
+  }
+  .content-AC {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    overflow: hidden;
+    min-width: 0;
+  }
+  .title-AC {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    text-align: left;
+    margin: 0;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    line-clamp: 2; /* Standard property for compatibility */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 100%;
+  }
+  .source-AC {
+    font-size: 0.75rem;
+    color: #666;
+    font-weight: 600;
+    margin-top: 90px;
+    position: start;
+    position: absolute;
+    left: 5px;
+  }
+  .actions-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+  }
+
+  .more-options {
+    position: absolute;
+    top: 100px;
+    bottom: 0px;
+    right: 8px;
+  }
+
+  .AC-dropdown-menu {
+    position: relative;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    width: 150px;
+    top: 60px;
+    right: 0px;
+    z-index: 10;
+  }
+
+  .card-AC {
+    position: relative; /* Make this the positioning context for absolutely positioned children */
+  }
+}

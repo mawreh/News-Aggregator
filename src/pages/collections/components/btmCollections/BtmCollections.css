@@ -1,0 +1,24 @@
+.btm-collections-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    align-items: stretch;
+    margin-bottom: 1rem;
+  }
+  
+  .btm-collections-grid .card-LG {
+    grid-row: auto;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-height: none;
+    margin: 0;
+  }
+  
+  .btm-collections-mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 100%;
+  }

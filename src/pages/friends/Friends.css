@@ -1,0 +1,105 @@
+.friends-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem 2.1rem;
+  max-width: 1200px;
+  margin: 50px auto 3rem auto;
+  box-sizing: border-box;
+  margin-bottom: 500px;
+}
+
+@media (max-width: 900px) {
+  .friends-content-container {
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: none;
+  }
+   /* Hide the SideNav */
+   .side-nav {
+    display: none; /* Ensure the side menu disappears */
+    transition: transform 0.3s ease, width 0.3s ease;
+  }
+}
+
+@media (max-width: 600px) {
+  .friends-content-container {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.friends-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  max-width: 900px;
+}
+
+.friends-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 42px;
+}
+
+.divider {
+  color: #d9d9d9;
+  width: 100%;
+  border-style: solid;
+  margin-top: 10px;
+}
+
+.friends-content-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  justify-items: stretch;
+}
+
+.friends-content-container > .friend-card {
+  flex: none;                /* disable any flex-based resizing */
+  width: 100%;               /* fill the grid cell */
+  max-width: none;           /* clear previous max-width rules */
+  height: auto;              /* let content define height */
+}
+
+/* Messages Section */
+.messages-section {
+  margin-top: 1rem;
+}
+
+.messages-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 42px;
+  }
+
+.messages-title {
+  margin: 0;
+}
+
+.messages-content {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.no-messages {
+  font-size: 1rem;
+  color: #666;
+  text-align: left;
+}
+
+.no-friends-message {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  text-align: left;
+  font-size: 1rem;
+  color: #666;
+  text-align: left;
+}

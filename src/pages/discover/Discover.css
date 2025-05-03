@@ -1,0 +1,146 @@
+.discover-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5rem 5%;
+  margin: 2em auto;
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #008078;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  border: 0;
+  border-bottom: 2px solid #d9d9d9;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.best-of-the-web-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: left;
+}
+
+.best-of-the-web-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* Align items to the start of the row */
+  flex-wrap: nowrap;
+  /* Prevent wrapping */
+  align-items: center;
+  /* Center items vertically */
+  gap: 1rem;
+  /* Add spacing between items */
+  margin-top: 1rem;
+  /* Add some margin to the top */
+  width: 100%;
+  ;
+}
+
+.blockquote-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.blockquote-image {
+  width: 100%;
+  /* Adjust as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+  max-width: 100%;
+  /* Ensure it doesn't exceed the container width */
+}
+
+.tag-menu-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: left;
+}
+
+.tag-menu-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: left;
+}
+
+.fascinating-stories-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: left;
+  margin-bottom: 1rem;
+}
+
+.fascinating-stories-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: left;
+}
+
+/* Grid layout for Fascinating Stories and Discover More Topics */
+.fascinating-stories-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* Left column takes 3x the space of the right column */
+  gap: 20px;
+  /* Space between the columns */
+  margin: 0;
+  /* Add some spacing around the grid */
+}
+
+.fascinating-stories-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.fascinating-stories-right {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  /* Add some padding */
+  border-radius: 8px;
+  /* Optional: Add rounded corners */
+}
+
+.finest-discoveries-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: left;
+  margin-bottom: 1rem;
+}
+
+.finest-discoveries-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: left;
+}

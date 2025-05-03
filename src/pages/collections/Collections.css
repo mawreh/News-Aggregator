@@ -1,0 +1,97 @@
+.collections-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 5%;
+  margin: 2em auto;
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+
+}
+
+a {
+  text-decoration: none;
+  color: #008078;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  color: #d9d9d9;
+  width: 100%;
+  text-align: left;
+  border-style: solid;
+}
+
+.for-your-pocket-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: left;
+}
+
+.for-your-pocket-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blockquote-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: left;
+}
+
+.horiz-collections-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: left;
+}
+
+/* Grid layout for Fascinating Stories and Discover More Topics */
+.collections-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* Left column takes 3x the space of the right column */
+  gap: 20px;
+  margin-top: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.collections-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.collections-right {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  /* Add some padding */
+  border-radius: 8px;
+}
+
+.btm-for-your-pocket-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
