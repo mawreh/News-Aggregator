@@ -1,0 +1,108 @@
+.notifications-container {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 555px;
+  max-width: calc(100vw - 64px);
+  max-height: 75px;
+  height: 75px;
+  pointer-events: auto;
+  transform-origin: bottom right;
+  margin-bottom: 8px;
+  animation: slideInAndFade 0.5s ease-out forwards;
+  position: relative;
+}
+
+.notification.fade-out {
+  animation: slideOutAndFade 0.5s ease-in forwards;
+}
+
+.notification .notification-message {
+  flex-grow: 1;
+}
+
+.notification .notification-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.notification.like-success {
+  background: #008078;
+  color: white;
+}
+
+.notification.like-reset {
+  background: #FFEB0B;
+  color: #1A1A1A;
+}
+
+.notification.dislike-success {
+  background: #EF4056;
+  color: #1A1A1A;
+}
+
+.notification.dislike-reset {
+  background: #FFEB0B;
+  color: #1A1A1A;
+}
+
+.notification.save-success {
+  background: #008078;
+  color: white;
+}
+
+.notification.save-reset {
+  background: #EF4056;
+  color: #1A1A1A;
+}
+
+.notification.friend-added {
+  background: #008078;
+  color: white;
+}
+
+.notification.friend-removed {
+  background: #EF4056;
+  color: #1A1A1A;
+}
+
+@keyframes slideInAndFade {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutAndFade {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+}

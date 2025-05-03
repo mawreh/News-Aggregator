@@ -1,0 +1,39 @@
+.save-button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  padding: 8px 12px;
+}
+
+.save-button .icon {
+  width: 26px;
+  height: 26px;
+  fill: #EF4056;
+  margin-right: 0.2rem;
+  transition: fill 0.3s ease;
+}
+
+.save-button .text {
+  font-weight: 400;
+  color: #1A1A1A;
+}
+
+.save-button:hover .text {
+  font-weight: 600;
+}
+
+.save-button.saved .text {
+  font-weight: 400;
+}
+
+.save-button.saved .icon {
+  fill: #EF4056;
+}
+
+.save-button-container {
+  position: relative;
+}

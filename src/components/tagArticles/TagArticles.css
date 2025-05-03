@@ -1,0 +1,59 @@
+/* The container that controls how much of the grid is visible */
+.grid-container {
+    position: relative; 
+    /* We’ll use a dynamic max-height set from inline style */
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .TP-feed {
+    position: relative;
+  }
+  
+  /* Continue using the 3-col grid from your existing styles */
+  .TP-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .read-more-container {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5rem;              /* height of your button area */
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;     /* button hugs the bottom */
+      pointer-events: none;      /* let the button itself capture clicks */
+    }
+  
+  /* The pseudo-element creates the white gradient overlay */
+  .read-more-container::before {
+    content: "";
+    position: absolute;
+    top: -20px;                /* peek 20px up into your teaser row */
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(to top, #fff, transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .read-more-button {
+    pointer-events: auto;      /* re‑enable clicks on the button */
+    position: relative;
+    z-index: 2;
+    margin: 0 0.5rem 0.5rem;   /* small bottom margin if you like */
+    padding: 0.75rem 1.5rem;
+    background-color: #EF3E56;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+  }

@@ -1,0 +1,14 @@
+.PH-feed {
+    max-width: 1350px;
+}
+
+.PH-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 articles per row */
+    gap: 20px;
+    /* Add spacing between articles */
+    justify-content: center;
+    /* Center the grid horizontally */
+    overflow: hidden;
+}

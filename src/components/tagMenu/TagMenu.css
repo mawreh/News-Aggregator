@@ -1,0 +1,35 @@
+.tag-menu-container {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+  gap: 7px;
+  flex-wrap: wrap;
+  padding: 10px 0px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tag-button {
+  background-color: #fff;
+  color: #1a1a1a;
+  border: 1px solid #D9D9D9;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 10px;
+  padding: 20px 25px;
+  cursor: pointer;
+}
+
+.tag-button:hover {
+  border: 1px solid #008078;
+  background: rgba(2, 185, 173, 0.28);
+  color: #008078;
+}
+
+.tag-button.active {
+  border: 1px solid #008078;
+  background: rgba(2, 185, 173, 0.28);
+  color: #008078;
+}

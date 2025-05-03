@@ -1,0 +1,15 @@
+.PC-feed {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.PC-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 1rem;
+  justify-content: flex-start;
+  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(289px, 1fr));
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

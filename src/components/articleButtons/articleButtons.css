@@ -1,0 +1,485 @@
+.article-buttons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Added from new styles */
+  padding: 3%; /* Keep relative padding */
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.action-btn {
+  position: relative;
+  flex-shrink: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center; /* Ensure icon is centered */
+  align-items: center;
+  width: 25%;
+  height: auto;
+  max-width: 25px;
+  max-height: 25px;
+  min-width: 25px;
+  min-height: 25px;
+  border-radius: 4px; /* New addition */
+  transition: all 0.2s ease; /* Smooth hover effects */
+}
+
+.action-btn .icon:hover {
+  color: #666;
+}
+
+/* Active styles for like and dislike icons */
+.active-like {
+  color: #008078;
+}
+
+.active-dislike {
+  color: #ef4056;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #1A1A1A;
+  color: white;
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #1A1A1A transparent transparent transparent;
+}
+
+.action-btn:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* comment Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: hidden;
+}
+
+.modal {
+  background: white;
+  font-family: 'Inter', 'Arial', sans-serif;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 550px;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  max-height: 95vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.modal.share-modal {
+  gap: 0.2rem;
+}
+
+.modal p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.modal img.article-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.modal .close-btn {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .divider {
+  border: 1px solid #d9d9d9;
+  width: 100%;
+}
+
+.modal .comment-section {
+  max-height: 200px;
+  min-width: 500px;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.modal .comment:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modal .comment {
+  position: relative;
+  display: flex;
+  width: 492px;
+  flex-direction: column;
+  background-color: #d9d9d9;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.modal .comment-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.modal .comment-header .profile-pic-container {
+  pointer-events: auto;
+}
+
+.modal .comment-header .profile-pic-container img {
+  pointer-events: none;
+}
+
+.modal .profile-pic-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .comment-profile-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.modal .comment-info-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.modal .comment-info {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  gap: 5px;
+  margin-top: 0;
+}
+
+.modal .comment-actions {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+
+.modal .comment .text {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: #1a1a1a;
+  padding-left: 42px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.modal .comment-count {
+  color: #666;
+  font-size: 12px;
+}
+
+.modal .username {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.modal .timestamp {
+  font-size: 12px;
+}
+
+.modal .comment-actions {
+  top: 10px;
+  right: 5px;
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .reply-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  color: #666;
+}
+
+.modal .options-btn {
+  background-color: transparent;
+  transform: rotate(90deg);
+  border: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  color: #666;
+}
+
+.modal .reply-btn:hover {
+  color: #1a1a1a;
+}
+
+.modal .options-btn:hover {
+  color: #1a1a1a;
+}
+
+.modal .input-section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.modal .input-section img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.modal .input-section textarea {
+  font-family: 'Inter', 'Arial', sans-serif;
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  height: 100px;
+  min-width: 390px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  text-align: left;
+  vertical-align: top;
+  resize: none;
+  padding: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.modal .input-section textarea::placeholder {
+  position: absolute;
+  padding: 5px;
+  top: 5px;
+  left: 5px;
+  font-size: 14px;
+  color: #666;
+}
+
+.modal .input-section button {
+  background-color: #666;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.modal .input-section button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.warning {
+  color: #EF4056;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: auto;
+}
+
+/* Dropdown menu for Options button */
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #d9d9d9;
+  color: #666666;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 10000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 200px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.dropdown-item {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #666666;
+  border-radius: 8px;
+}
+
+.dropdown-item .dropdown-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* ---------- SHARE MODAL BUTTONS ---------- */
+
+.share-btn {
+  width: 100%;
+  min-width: 454px;
+  min-height: 50px;
+  border: none;
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1rem;
+  padding: 0 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.02rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  margin-top: 0.1rem;
+}
+
+.share-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.facebook-btn {
+  background-color: #4267B2;
+}
+
+.facebook-btn:hover {
+  background-color: #314A7D;
+}
+
+.linkedin-btn {
+  background-color: #0073B1;
+}
+
+.linkedin-btn:hover {
+  background-color: #025B8B;
+}
+
+.email-btn {
+  background-color: #666666;
+}
+
+.email-btn:hover {
+  background-color: #404040;
+}
+
+.share-or {
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.share-link {
+  width: 100%;
+  min-width: 454px;
+  min-height: 50px;
+  background-color: #d9d9d9;
+  border-radius: 0.625rem;
+  display: flex;
+  align-self: flex-start;
+  justify-self: space-between;
+  flex-direction: column;
+  padding: 1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.copied-feedback {
+  font-size: 0.875rem;
+  color: #008078;
+  margin-left: 0;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  align-self: auto;
+}
+
+.cancel-btn {
+  align-self: flex-end;
+  background-color: #666666;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.cancel-btn:hover {
+  background-color: #404040;
+}

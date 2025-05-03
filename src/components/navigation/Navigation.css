@@ -1,0 +1,577 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  gap: 1rem;
+  padding: 1rem 10%;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  max-width: 100%;
+  z-index: 1000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  height: 65px;
+  box-sizing: border-box;
+}
+  
+  /* ---------------------------------------------------------------------- */
+  
+  .nav-section {
+  display: flex;
+  align-items: center;
+  }
+  
+  .nav-section-1 {
+  flex: 1;
+  max-width: 150px;
+  min-width: 150px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  }
+  
+  /* Logo wrapper */
+  .nav-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40px;
+  width: 200px;
+  position: relative;
+  }
+  
+  .nav-logo-wrapper.mobile-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  }
+  
+  /* Individual logos */
+  .nav-logo-image {
+    height: 27px;
+  }
+  
+  .nav-logo-image.hide {
+  display: none;
+  }
+  
+  .nav-logo-image.show {
+  display: block;
+  }
+  
+  /* ---------------------------------------------------------------------- */
+  
+  .nav-section-2 {
+  flex: 1;
+  justify-content: space-around;
+  /* background-color: green; */
+  align-items: center;
+  max-width: 500px;
+  }
+  
+  .nav-links {
+  font-family: 'Inter', 'Arial', sans-serif;
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .nav-link {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 1.5rem;
+  color: #1a1a1a;
+  }
+  
+  .nav-link:hover {
+  color: #008078;
+  text-decoration: none;
+  }
+  
+  .nav-link.active {
+  border-bottom: 4px #008078 solid;
+  }
+  
+  .nav-section-3 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 250px;
+  min-width: 250px;
+  margin-right: 100px;
+  opacity: 80%;
+  }
+  
+  /* Search tooltip */
+  .search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  opacity: 1;
+  margin-right: 7px;
+  }
+  
+  .search-button:hover::after {
+  font-family: inherit;
+  z-index: 2;
+  content: "Search";
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 1;
+  visibility: visible;
+  width: auto;
+  max-height: 28px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .search-button::after {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-5px);
+  }
+  
+  .search-button:hover::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #1a1a1a;
+  }
+  
+  .search-icon {
+  width: 100%;
+  height: 100%;
+  fill: #666;
+  transition: fill 0.3s ease;
+  }
+  
+  .search-button:hover{
+  color: #008078;
+  }
+  
+  /* Upgrade & Profile */
+  .upgrade-button,
+  .profile-container {
+  display: flex;
+  align-items: center;
+  }
+  
+  .upgrade-button {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #1a1a1a;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  }
+  
+  .upgrade-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  transition: filter 0.3s ease;
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%);
+  }
+  
+  .upgrade-button:hover {
+  color: #008078;
+  }
+  
+  .upgrade-button:hover .upgrade-icon {
+  filter: brightness(0) saturate(100%) invert(38%) sepia(78%) saturate(500%) hue-rotate(120deg);
+  }
+  
+  .profile-container {
+  position: relative;
+  }
+  
+  .profile-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  }
+  
+  .profile-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  }
+  
+  .profile-container:hover::after {
+  content: "Account";
+  position: absolute;
+  z-index: 2;
+  font-family: inherit;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .profile-container::after {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-5px);
+  }
+  
+  .profile-container:hover::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #1a1a1a;
+  }
+  
+  .profile-img:hover {
+  color: hsla(176, 100%, 25%, 28%);
+  border: 1px solid #008078;
+  }
+  
+  .vertical-separator {
+  color: #c3c3c3;
+  font-size: 1.2rem;
+  font-weight: 100;
+  opacity: 0.9;
+  }
+  
+  /* Make sure buttons/images align properly */
+  .search-button,
+  .upgrade-button,
+  .profile-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .upgrade-button span {
+  margin-right: 1rem;
+  }
+  
+  .profile-img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* ---------------------------------------------------------------------- */
+  
+  /* Hamburger menu */
+  .hamburger-menu {
+  display: none;
+  margin-left: 0;
+  align-items: flex-start;
+  }
+  
+  .hamburger-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  }
+  
+  .nav-section-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 150px;
+  }
+  
+  /* Hamburger and nav responsiveness */
+  @media (max-width: 1025px) {
+  .nav-links-desktop {
+  display: none;
+  }
+  
+  /* .hamburger-menu {
+  display: flex-start;
+  background-color: #008078;
+  } */
+  
+  .navigation {
+  justify-content: space-between;
+  }
+  
+  .nav-section-1 {
+  max-width: 50px;
+  min-width: 50px;
+  padding-left: 8px;
+  justify-content: flex-start;
+  display: none;
+  }
+  
+  .nav-logo-wrapper {
+  width: 30px;
+  height: 30px;
+  }
+  
+  .nav-logo-image {
+  max-width: 40px;
+  max-height: 40px;
+  }
+  
+  .nav-section-2 {
+  display: none;
+  }
+  
+  .hamburger-menu {
+  display: block;
+  font-size: 1rem;
+  }
+  
+  .nav-section-3 {
+  max-width: 250px;
+  justify-content: space-between;
+  }
+  
+  .nav-section-left {
+  justify-content: flex-start;
+  max-width: 150px;
+  min-width: 150px;
+  }
+  
+  }
+  
+  
+  /* Side menu */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75vw;                /* Default: dynamic width */
+    max-width: 1100px;
+    min-width: 260px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease, width 0.3s ease;
+    z-index: 1000;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .side-menu.open {
+  transform: translateX(0);
+  }
+  
+  .side-menu-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 11px;
+  padding-top: 3px;
+  margin-bottom: 10px;
+  }
+
+  
+  .back-arrow {
+  font-size: 1.6rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin-left: 5px;
+  }
+  
+  .side-menu-links {
+  width: 100%;
+  list-style: none;
+  /* padding: 1rem 0; */
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  }
+  
+ .side-menu-links li {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  width: 100%;
+  /* text-align: center; */
+}
+
+  .side-menu-links li svg.side-menu-icon {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    margin-right: 10px;
+  }
+
+  .side-menu-links li:hover {
+    background-color: #f0f0f0;
+    }
+
+  .nav-section-middle svg {
+    display: none;
+  }
+  
+  .side-menu-icon {
+    fill: #1a1a1a; /* Default fill color */
+    transition: fill 0.3s ease;
+  }
+
+  .side-menu-links a.active .side-menu-icon {
+    fill: #008078; /* Active fill color */
+  }
+
+  .side-menu-links li:hover .side-menu-icon {
+    fill: white; /* Hover fill color */
+  }
+  
+  .side-menu-links a {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  font-weight: bold;
+  padding-left: 17px;
+  }
+  .side-menu-links a.active {
+    background-color: rgba(0, 128, 119, 0.31);
+    color: #008078;
+  }
+
+  .side-menu-links a:hover {
+  background-color: #008078;
+  color: white;
+  text-decoration: none;
+  }
+  
+  .side-menu-icon svg:hover {
+    fill: white;
+  }
+
+  .side-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 999;
+  }
+
+  .side-menu-links li a {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Adjust space between icon and text */
+    padding: 12px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+  
+  .side-menu-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+  
+  @media (max-width: 480px) {
+  .side-menu {
+  width: 100%;
+  }
+  }
+  
+  /* home saves discover coolections and friends links spacing */
+  .nav-section .nav-link {
+  padding: 1rem 0.4rem;
+  }
+  
+  .nav-icon {
+    width: 16px; /* Adjust the width to make the icon smaller */
+    height: 16px; /* Adjust the height to make the icon smaller */
+    margin-right: 8px; /* Space between the icon and text */
+    vertical-align: middle; /* Align the icon vertically with the text */
+  }
+  
+
+  
+  .nav-link svg {
+    margin-right: 8px; /* Add space between icon and text */
+  }
+  
+  .back-arrow-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .back-arrow-icon:hover {
+    color: #008078;
+  }
+
+  /* side menu sizing */
+
+  @media (max-width: 821px) {
+    .side-menu {
+      width: 25vw; /* or even smaller */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .side-menu {
+      width: 30vw;
+    }
+  }

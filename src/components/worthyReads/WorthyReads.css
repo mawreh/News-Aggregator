@@ -1,0 +1,14 @@
+.WR-feed {
+    max-width: 1350px;
+    margin: 0 auto;
+  }
+  
+  .WR-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }

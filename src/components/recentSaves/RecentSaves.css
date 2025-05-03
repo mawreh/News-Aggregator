@@ -1,0 +1,29 @@
+.recent-saves-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/* Hide beyond 2 on medium screens (≤ 960px) */
+@media (max-width: 960px) {
+  .recent-saves-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .recent-saves-container > :nth-child(n + 3) {
+    display: none;
+  }
+}
+
+/* Hide beyond 1 on small screens (≤ 600px) */
+@media (max-width: 600px) {
+  .recent-saves-container {
+    grid-template-columns: 1fr;
+  }
+
+  .recent-saves-container > :nth-child(n + 2) {
+    display: none;
+  }
+}
