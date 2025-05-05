@@ -1,5 +1,10 @@
 ## Pocket App created by Group 15
-Members include: Allison Dunny, Maw Reh, Kiet Mai, and Kris Seberry  
+Members include: 
+Maw Reh - UI/UX Design, Development
+Allison Dunny - UI/UX Design, Development
+Kiet Mai - development
+Kris Seberr - UX design
+
 ITIS 4390/5390 091 Interaction Design Projects
 
 # React + Vite
